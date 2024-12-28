@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CyberIGuard - Advanced Privacy and Security Scanner">
+    <title>CyberIGuard | Privacy and Security Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>CyberIGuard</h1>
+        <p>Your trusted partner in safeguarding digital privacy and security</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Scan a Website</h2>
+            <form action="/scan" method="POST">
+                <label for="url">Enter Website URL:</label>
+                <input type="url" id="url" name="url" placeholder="https://example.com" required>
+                <button type="submit">Start Scan</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Privacy Assessment</h3>
+                    <p>Analyze privacy policies, cookies, and trackers to ensure compliance with global standards.</p>
+                </div>
+                <div class="feature">
+                    <h3>Security Strength</h3>
+                    <p>Evaluate HTTPS implementation, headers, and encryption protocols to identify vulnerabilities.</p>
+                </div>
+                <div class="feature">
+                    <h3>Weakness Identification</h3>
+                    <p>Pinpoint weaknesses that hackers can exploit to compromise sensitive information.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>About CyberIGuard</h2>
+            <p>CyberIGuard specializes in advanced tools to analyze and enhance online security. With real-time scanning and deep insights, we empower businesses and individuals to stay one step ahead of cyber threats.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 CyberIGuard. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:marwinmarick@gmail.com">marwinmarick@gmail.com</a></p>
+    </footer>
+</body>
+</html>

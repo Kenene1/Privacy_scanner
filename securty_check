@@ -1,0 +1,88 @@
+def perform_security_checks(url):
+    """
+    Perform security checks on the given URL, including HTTPS validation,
+    SSL certificate validation, and DNSSEC status.
+    """
+    import requests
+    import urllib.parse
+    import logging
+
+    # Log the start of the security checks
+    logging.info(f"Starting security checks for URL: {url}")
+
+    # Parse the URL and extract the domain
+    parsed_url = urllib.parse.urlparse(url)
+    domain = parsed_url.netloc or parsed_url.path
+    if not domain:
+        logging.error("Invalid URL provided.")
+        return "Error: Invalid URL. Please provide a valid domain."
+
+    # HTTPS Check
+    if not url.lower().startswith("https://"):
+        https_message = "Warning: The URL is not using HTTPS, which may expose your data to security risks."
+    else:
+        https_message = "Secure: The URL is using HTTPS."
+
+    # SSL Certificate Validation
+    ssl_message = validate_ssl_certificate(url)
+
+    # DNSSEC Check
+    dnssec_message = check_dnssec(domain)
+
+    # Combine and log results
+    result = f"HTTPS Status:\n{https_message}\n\nSSL Certificate Status:\n{ssl_message}\n\nDNSSEC Status:\n{dnssec_message}"
+    logging.info(f"Completed security checks for URL: {url}")
+    return result
+
+
+def validate_ssl_certificate(url):
+    """
+    Validate the SSL certificate of the given URL using requests library.
+    """
+    import requests
+    import logging
+
+    try:
+        response = requests.get(url, timeout=5, verify=True)
+        if response.status_code == 200:
+            return "Secure connection: HTTPS is used, and the SSL certificate is valid."
+        else:
+            return f"Warning: HTTPS connection established, but the server returned status code {response.status_code}."
+    except requests.exceptions.SSLError:
+        logging.warning("SSL certificate is invalid or expired.")
+        return "Error: The SSL certificate is invalid or expired."
+    except requests.exceptions.ConnectionError as e:
+        logging.error(f"Connection error during SSL validation: {str(e)}")
+        return "Error: Could not connect to the server. The domain may not exist or is unreachable."
+    except Exception as e:
+        logging.error(f"Unexpected error during SSL validation: {str(e)}")
+        return f"Error: Unexpected error occurred during SSL certificate validation. {str(e)}"
+
+
+def check_dnssec(domain):
+    """
+    Check if the given domain supports DNSSEC.
+    """
+    import dns.resolver
+    import logging
+
+    try:
+        # Use a public DNS resolver for reliability
+        resolver = dns.resolver.Resolver()
+        resolver.nameservers = ['8.8.8.8', '8.8.4.4']
+
+        # Query for DNSKEY record
+        result = resolver.resolve(domain, 'DNSKEY')
+        if result.rrset:
+            return f"DNSSEC: The domain {domain} supports DNSSEC."
+        else:
+            return f"DNSSEC: The domain {domain} does not support DNSSEC."
+    except dns.resolver.NoAnswer:
+        logging.warning(f"DNSSEC support not found for {domain}.")
+        return f"DNSSEC: The domain {domain} does not support DNSSEC."
+    except dns.resolver.NXDOMAIN:
+        logging.error(f"Domain does not exist: {domain}.")
+        return f"DNSSEC: The domain {domain} does not exist."
+    except Exception as e:
+        logging.error(f"Unexpected error while checking DNSSEC for {domain}: {str(e)}")
+        return f"DNSSEC: Error occurred while checking DNSSEC for {domain}. {str(e)}"

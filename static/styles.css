@@ -1,0 +1,153 @@
+/* Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: #343a40;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+}
+
+.result-category {
+    margin-bottom: 3rem;
+}
+
+.result-category h3 {
+    font-size: 1.8rem;
+    color: #343a40;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #007bff;
+    display: inline-block;
+}
+
+.result-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result-category ul li {
+    background: #e9ecef;
+    margin: 0.8rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.result-category ul li span {
+    color: #495057;
+    font-weight: 600;
+}
+
+button,
+a.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+button:hover,
+a.button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #343a40;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .result-category h3 {
+        font-size: 1.5rem;
+    }
+
+    button,
+    a.button {
+        width: 100%;
+        padding: 1rem;
+    }
+}
