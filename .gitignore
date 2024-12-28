@@ -1,0 +1,109 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE/editor configurations
+# JetBrains IDEs
+.idea/
+# VSCode
+.vscode/
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+# Emacs
+*~
+# Vim
+*.swp
+*.swo
+*.vim
+# Eclipse
+.project
+.metadata/
+
+# Operating System Files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Windows
+Thumbs.db
+ehthumbs.db
+# Linux
+*~
+# Temporary files
+*.bak
+*.tmp
+*.swp
+*.swo
+*.log
+*.out
+*.pid
+
+# Package manager files
+# pipenv
+Pipfile.lock
+# poetry
+poetry.lock
+# conda
+conda-meta/
+envs/
+*.conda
+*.egg-info/
+
+# Dependency directories
+node_modules/
+
+# Configuration files for system services
+*.service
+*.socket
+
+# Logs
+*.log
+
+# Certificates and keys (if applicable)
+certs/
+*.pem
+*.key
+*.crt
+
+# Database files
+*.sqlite3
+*.db
+
+# Compiled C extensions
+*.so
+*.dylib
+*.dll
+
+# Test coverage and test artifacts
+coverage/
+*.cover
+*.hypothesis/
+nosetests.xml
+pytest.xml
+test-results/
+
+# Application specific
+# Flask instance folder
+instance/
+# Flask config
+config.py
+# Django secret key
+*.env
+*.ini
+*.envrc
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+*.log
