@@ -1,0 +1,16 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+2024-12-27 11:53:38,157 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.120.250.253:5000
+2024-12-27 11:53:38,157 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-27 11:55:00,708 - INFO - 127.0.0.1 - - [27/Dec/2024 11:55:00] "GET / HTTP/1.1" 200 -
+2024-12-27 11:55:58,600 - INFO - 127.0.0.1 - - [27/Dec/2024 11:55:58] "GET / HTTP/1.1" 200 -
+2024-12-27 11:55:58,721 - INFO - 127.0.0.1 - - [27/Dec/2024 11:55:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-27 11:56:01,427 - INFO - 127.0.0.1 - - [27/Dec/2024 11:56:01] "GET / HTTP/1.1" 200 -
+2024-12-27 11:56:40,323 - INFO - 127.0.0.1 - - [27/Dec/2024 11:56:40] "GET / HTTP/1.1" 200 -
+2024-12-27 11:56:41,752 - INFO - 127.0.0.1 - - [27/Dec/2024 11:56:41] "GET / HTTP/1.1" 200 -
+2024-12-27 12:21:13,046 - INFO - 127.0.0.1 - - [27/Dec/2024 12:21:13] "GET / HTTP/1.1" 200 -
+2024-12-27 12:21:27,873 - INFO - 127.0.0.1 - - [27/Dec/2024 12:21:27] "GET / HTTP/1.1" 200 -
+2024-12-27 12:21:29,378 - INFO - 127.0.0.1 - - [27/Dec/2024 12:21:29] "GET / HTTP/1.1" 200 -

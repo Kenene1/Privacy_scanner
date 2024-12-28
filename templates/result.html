@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CyberIGuard - Scan Results">
+    <title>CyberIGuard | Scan Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>CyberIGuard</h1>
+        <p>Scan Results for Enhanced Privacy and Security</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Scan Summary</h2>
+            <p><strong>Website Scanned:</strong> {{ url }}</p>
+            <p><strong>Scan Date:</strong> {{ scan_date }}</p>
+        </section>
+
+        <section>
+            <h2>Privacy Analysis</h2>
+            <div class="result-category">
+                <h3>Strengths</h3>
+                <ul>
+                    {% for item in privacy_strengths %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="result-category">
+                <h3>Weaknesses</h3>
+                <ul>
+                    {% for item in privacy_weaknesses %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Security Strength Assessment</h2>
+            <div class="result-category">
+                <h3>Security Strengths</h3>
+                <ul>
+                    {% for item in security_strengths %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="result-category">
+                <h3>Vulnerabilities</h3>
+                <ul>
+                    {% for item in vulnerabilities %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Recommendations</h2>
+            <p>Based on the scan results, we recommend addressing the identified weaknesses and vulnerabilities to enhance your website's security and privacy compliance.</p>
+            <ul>
+                {% for recommendation in recommendations %}
+                    <li>{{ recommendation }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section>
+            <h2>Download Full Report</h2>
+            <a href="/download_report/{{ report_id }}" class="button">Download PDF</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 CyberIGuard. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:marwinmarick@gmail.com">marwinmarick@gmail.com</a></p>
+    </footer>
+</body>
+</html>
