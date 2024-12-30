@@ -1,0 +1,40 @@
+<!-- app/templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Welcome to the Privacy Scanner</h2>
+    <p>Scan your documents for privacy risks.</p>
+    <a href="{{ url_for('routes.scan') }}" class="btn-primary">Start Scanning</a>
+</section>
+
+<section class="features">
+    <h3>Features</h3>
+    <ul>
+        <li>
+            <h4>Comprehensive Analysis</h4>
+            <p>Thorough examination of your documents to identify potential privacy issues.</p>
+        </li>
+        <li>
+            <h4>Real-Time Results</h4>
+            <p>Instant feedback on the privacy status of your documents.</p>
+        </li>
+        <li>
+            <h4>User-Friendly Interface</h4>
+            <p>Intuitive design for a seamless scanning experience.</p>
+        </li>
+    </ul>
+</section>
+
+<section class="testimonials">
+    <h3>What Our Users Say</h3>
+    <blockquote>
+        <p>"Privacy Scanner has been invaluable in ensuring my documents are secure." - Jane Doe</p>
+    </blockquote>
+    <blockquote>
+        <p>"An essential tool for anyone concerned about document privacy." - John Smith</p>
+    </blockquote>
+</section>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!-- app/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - Privacy Scanner</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Additional head content can be added here -->
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Privacy Scanner</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('routes.home') }}">Home</a></li>
+                <li><a href="{{ url_for('routes.about') }}">About</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Privacy Scanner. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to external JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Additional scripts can be added here -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>
